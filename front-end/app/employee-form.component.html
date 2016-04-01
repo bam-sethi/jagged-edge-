@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="form-container" [hidden]="submitted">
+    <h1>Employee Status</h1>
+    <form *ngIf="active" (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+      <!-- {{diagnostic}} -->
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" required
+        [(ngModel)]="model.firstName"
+        ngControl="firstName"
+        #firstName="ngForm"
+        placeholder="First Name">
+        <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
+          This field is required.
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="lastName">Surname</label>
+        <input type="text" class="form-control" required 
+        [(ngModel)]="model.lastName" 
+        ngControl="lastName"
+        #lastName="ngForm"
+        placeholder="Surname">
+        <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
+          This field is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <select class="form-control" required
+        [(ngModel)]="model.statuses"
+        ngControl="statuses"         
+        #status="ngForm">
+          <option *ngFor="#status of statuses" 
+          [value]="status">{{status}}</option>
+        </select>
+        <div [hidden]="status.valid || status.pristine" class="alert alert-danger">
+          You must select an option.
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-default" 
+      (click)="submission()"
+      [disabled]="!employeeForm.form.valid">POST</button>
+
+    </form>
+  </div>
+
+  <div class="panel-container" [hidden]="!submitted">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+      Information for {{ model.id }} 
+      </div>
+      <div class="panel-body"> 
+      {{model.firstName}} {{model.lastName}}'s status is {{ model.statuses }}
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+      <div class="panel-body"> 
+      </div>
+      </div>
+    </div>
+<!--     <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">First Name</div>
+      <div class="col-xs-9  pull-left">{{ model.firstName }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Surname</div>
+      <div class="col-xs-9  pull-left">{{ model.lastName }}</div>
+    </div>
+    
+    <div class="row">
+      <div class="col-xs-3">Status</div>
+      <div class="col-xs-9 pull-left">{{ model.status }}</div>
+    </div>
+    <br>
+    <button class="btn btn-default" (click)="submitted=false">Edit</button>
+  </div> -->
+
+</div>
+

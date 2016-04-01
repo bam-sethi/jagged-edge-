@@ -1,0 +1,14 @@
+.my-navbar{
+  width: 100%;
+  background: dimgrey;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  /*font-style: italic;*/
+  height: 75px;
+  line-height: 75px;
+  text-shadow: 1px 1px 1px lightgrey; 
+  margin: auto;
+  text-align: center;
+}
