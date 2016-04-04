@@ -2,7 +2,7 @@
   "name": "jagged-edge",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/bam-sethi/jagged-edge-/issues"
   },
-  "homepage": "https://github.com/bam-sethi/jagged-edge-#readme"
+  "homepage": "https://github.com/bam-sethi/jagged-edge-#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "faker2": "^0.5.0"
+  }
 }

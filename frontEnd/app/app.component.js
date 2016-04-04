@@ -1,4 +1,4 @@
-System.register(['angular2/core', './employee-form.component', './navbar.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './employee-form.component', './navbar.component', './employee-list.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './employee-form.component', './navbar.compone
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, employee_form_component_1, navbar_component_1;
+    var core_1, employee_form_component_1, navbar_component_1, employee_list_component_1;
     var AppComponent;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['angular2/core', './employee-form.component', './navbar.compone
             },
             function (navbar_component_1_1) {
                 navbar_component_1 = navbar_component_1_1;
+            },
+            function (employee_list_component_1_1) {
+                employee_list_component_1 = employee_list_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -30,8 +33,8 @@ System.register(['angular2/core', './employee-form.component', './navbar.compone
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n              <edge-nav></edge-nav>\n              <edge-form></edge-form>\n              ",
-                        directives: [employee_form_component_1.EmployeeFormComponent, navbar_component_1.NavBarComponent]
+                        template: "<edge-nav></edge-nav>\n               <employee-list></employee-list>\n               <edge-form></edge-form>\n              ",
+                        directives: [employee_form_component_1.EmployeeFormComponent, navbar_component_1.NavBarComponent, employee_list_component_1.EmployeeListComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

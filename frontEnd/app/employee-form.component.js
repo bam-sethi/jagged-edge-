@@ -39,7 +39,6 @@ System.register(['angular2/core', './employee'], function(exports_1, context_1) 
                     setTimeout(function () { return _this.active = true; }, 0);
                 };
                 Object.defineProperty(EmployeeFormComponent.prototype, "diagnostic", {
-                    // TODO: Remove this when we're done
                     get: function () { return JSON.stringify(this.model); },
                     enumerable: true,
                     configurable: true
