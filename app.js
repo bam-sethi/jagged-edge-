@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var Faker = require('./node_modules/faker2');
+var Faker = require('./node_modules/faker');
 var fs = require('fs');
 var path = require('path');
 
@@ -8,10 +8,29 @@ app.use(express.static(__dirname + '/frontEnd'))
 
 
 var bigDataArray = [];
+var dataSet = {};
+var data = {};
+
+function generateData(){
+  data = {  firstName : Faker.name.firstName(),
+              lastName : Faker.name.lastName(),
+              location : Faker.address.city(),
+              company : Faker.company.companyName(),
+              date : Faker.date.recent(),
+              image : Faker.image.avatar()
+          }
+  return data
+}
+
+
 
 for(var i = 0; i < 50; i++){
-  bigDataArray.push(Faker.Helpers.userCard());
+  generateData()
+
+  bigDataArray.push(data)
+  // console.log(bigDataArray);
 };
+
 
 fs.writeFile('dataSet.json', JSON.stringify(bigDataArray), function(){
   console.log('data set produced');

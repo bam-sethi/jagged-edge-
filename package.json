@@ -18,6 +18,7 @@
   "homepage": "https://github.com/bam-sethi/jagged-edge-#readme",
   "dependencies": {
     "express": "^4.13.4",
+    "faker": "^3.1.0",
     "faker2": "^0.5.0"
   }
 }

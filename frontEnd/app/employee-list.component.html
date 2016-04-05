@@ -1,18 +1,20 @@
 <h1>LIST</h1>
 
-<div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
 
 <ul>
-  <li *ngFor="#employee of employees ">
+  <li class="employee-list" *ngFor="#employee of employees ">
     <div class="panel panel-primary">
       <div class="panel-heading">
-        {{employee.username}} <span>{{employee.phone}}</span>
+        <img style="width: 50px;" src="{{employee.image}}" alt="">
+        {{employee.firstName}} <span>{{employee.lastName}}</span>
       </div>
       <div class="panel-body"> 
-        {{employee.name}}
-        {{employee.email}}
-        {{employee.username}}
+        {{employee.location}}
+        <span>{{employee.company}}</span>
+
       </div>
     </div>
   </li>
 </ul>
+
+<div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
