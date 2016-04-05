@@ -22,7 +22,11 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1, context_
             }],
         execute: function() {
             EmployeeListComponent = (function () {
-                function EmployeeListComponent() {
+                function EmployeeListComponent(http) {
+                    var _this = this;
+                    http.get('/list')
+                        .map(function (res) { return console.log(res.json()); })
+                        .subscribe(function (data) { return _this.data = data; }, function (err) { return console.log(err); });
                 }
                 EmployeeListComponent = __decorate([
                     core_1.Component({
@@ -30,7 +34,7 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1, context_
                         viewProviders: [http_1.HTTP_PROVIDERS],
                         templateUrl: 'app/employee-list.component.html'
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [http_1.Http])
                 ], EmployeeListComponent);
                 return EmployeeListComponent;
             }());

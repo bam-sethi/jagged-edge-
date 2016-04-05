@@ -9,11 +9,13 @@ import {Http, HTTP_PROVIDERS} from 'angular2/http';
 
 export class EmployeeListComponent {
   data: Object;
-  // constructor(http: Http) {
-  //   http.get('/list')
-  //     .map(res => res.json())
-  //     .subscribe(data => this.data = data,
-  //                 err => console.log(err))
-  // }
+  constructor(http: Http) {
+    http.get('/list')
+      .map(res => console.log(res.json()))
+      .subscribe(data => this.data = data,
+                  err => console.log(err))
+  }
+  console.log(res)
+
 }
 
