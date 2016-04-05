@@ -1,5 +1,18 @@
 <h1>LIST</h1>
-<h2>hi {{bigDataArray}} {{res}}</h2>
+
+<div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+
 <ul>
-  <li *ngFor="#data of dataSet">{{data}}</li>
+  <li *ngFor="#employee of employees ">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        {{employee.username}} <span>{{employee.phone}}</span>
+      </div>
+      <div class="panel-body"> 
+        {{employee.name}}
+        {{employee.email}}
+        {{employee.username}}
+      </div>
+    </div>
+  </li>
 </ul>
