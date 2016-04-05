@@ -10,19 +10,22 @@ app.use(express.static(__dirname + '/frontEnd'))
 var bigDataArray = [];
 var dataSet = {};
 var data = {};
+var status = ['Employed', 'Unemployed', 'Unknown', 'Retired'];
+
+
 
 function generateData(){
-  data = {  firstName : Faker.name.firstName(),
+  var n = Math.round((Math.random() * 3))
+  data = {    firstName : Faker.name.firstName(),
               lastName : Faker.name.lastName(),
               location : Faker.address.city(),
               company : Faker.company.companyName(),
               date : Faker.date.recent(),
-              image : Faker.image.avatar()
+              image : Faker.image.avatar(),
+              status : status[n]
           }
-  return data
-}
-
-
+  return data;
+};
 
 for(var i = 0; i < 50; i++){
   generateData()
@@ -30,6 +33,7 @@ for(var i = 0; i < 50; i++){
   bigDataArray.push(data)
   // console.log(bigDataArray);
 };
+
 
 
 fs.writeFile('dataSet.json', JSON.stringify(bigDataArray), function(){
@@ -45,7 +49,6 @@ app.get("/", function (req, res) {
 app.get('/list', function (req, res) {
   res.json({bigDataArray});
   // res.sendFile('./dataSet.json')
-
 })
 
 

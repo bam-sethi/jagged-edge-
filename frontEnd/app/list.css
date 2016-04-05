@@ -1,3 +1,7 @@
 .employee-list{
   list-style: none;
 }
+
+.avatar{
+  border-radius: 50%;
+}

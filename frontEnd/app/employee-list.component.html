@@ -1,14 +1,15 @@
 <h1>LIST</h1>
 
-
 <ul>
   <li class="employee-list" *ngFor="#employee of employees ">
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <img style="width: 50px;" src="{{employee.image}}" alt="">
+        <img class="avatar" style="width: 50px;" src="{{employee.image}}" alt="">
         {{employee.firstName}} <span>{{employee.lastName}}</span>
       </div>
-      <div class="panel-body"> 
+      <div class="panel-body">
+        <span>STATUS IS NOW: {{employee.status}}</span>
+        <br> 
         {{employee.location}}
         <span>{{employee.company}}</span>
 
