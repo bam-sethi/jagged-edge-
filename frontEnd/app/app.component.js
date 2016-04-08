@@ -36,7 +36,7 @@ System.register(['angular2/core', './employee-form.component', './navbar.compone
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "<edge-nav>\n               </edge-nav>\n               <a [routerLink]=\"['EmployeeList']\">List</a>\n               <a [routerLink]=\"['EmployeeForm']\">Form</a>\n               <router-outlet></router-outlet>\n              ",
+                        template: "<edge-nav>\n               </edge-nav>\n               <a [routerLink]=\"['EmployeeList']\" class=\"glyphicon glyphicon-list\n\">List </a>\n               <a [routerLink]=\"['EmployeeForm']\" class=\"glyphicon glyphicon-plus\n\">Form</a>\n               <router-outlet></router-outlet>\n              ",
                         directives: [employee_form_component_1.EmployeeFormComponent, navbar_component_1.NavBarComponent, employee_list_component_1.EmployeeListComponent, router_1.ROUTER_DIRECTIVES],
                         providers: [router_1.ROUTER_PROVIDERS]
                     }),

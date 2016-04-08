@@ -1,5 +1,12 @@
-<h1>LIST</h1>
+<!-- <h1 class="title">Board</h1> -->
+<!-- <h1>New Post:</h1>
+<input #newHero />
+<button (click)="addHero(newHero.value); newHero.value=''">
+<h1>POST</h1>
+</button>
+<div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
 
+ -->
 <ul>
   <li class="employee-list" *ngFor="#employee of employees ">
     <div class="panel panel-primary">
@@ -12,7 +19,6 @@
         <br> 
         {{employee.location}}
         <span>{{employee.company}}</span>
-
       </div>
     </div>
   </li>

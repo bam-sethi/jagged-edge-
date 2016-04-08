@@ -8,8 +8,10 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
     selector: 'my-app',
     template: `<edge-nav>
                </edge-nav>
-               <a [routerLink]="['EmployeeList']">List</a>
-               <a [routerLink]="['EmployeeForm']">Form</a>
+               <a [routerLink]="['EmployeeList']" class="glyphicon glyphicon-list
+">List </a>
+               <a [routerLink]="['EmployeeForm']" class="glyphicon glyphicon-plus
+">Form</a>
                <router-outlet></router-outlet>
               `,
     directives: [EmployeeFormComponent, NavBarComponent, EmployeeListComponent, ROUTER_DIRECTIVES],
@@ -20,13 +22,14 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
   { 
     path: '/list', 
     name: 'EmployeeList',
-    component: EmployeeListComponent
+    component: EmployeeListComponent,
+    useAsDefault: true
   },
   {
     path: '/home',
     name: 'EmployeeForm',
-    component: EmployeeFormComponent,
-    useAsDefault: true
+    component: EmployeeFormComponent
+
   }
  ])
 
