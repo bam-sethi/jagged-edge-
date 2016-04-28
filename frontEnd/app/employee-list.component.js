@@ -36,14 +36,12 @@ System.register(['angular2/core', 'angular2/http', './employee.service', './pipe
                     var _this = this;
                     this._employeeService.getEmployees()
                         .subscribe(function (res) {
-                        _this.employees = res.bigDataArray;
-                        console.log(_this.employees);
+                        _this.employees = res;
                     }, function (error) { return _this.errorMessage = error; });
                 };
                 EmployeeListComponent = __decorate([
                     core_1.Component({
                         selector: 'employee-list',
-                        viewProviders: [http_1.HTTP_PROVIDERS],
                         templateUrl: 'app/employee-list.component.html',
                         providers: [
                             http_1.HTTP_PROVIDERS,

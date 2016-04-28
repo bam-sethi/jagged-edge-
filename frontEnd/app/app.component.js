@@ -1,4 +1,4 @@
-System.register(['angular2/core', './employee-form.component', './navbar.component', './employee-list.component', 'angular2/router'], function(exports_1, context_1) {
+System.register(['angular2/core', './employee-form.component', './navbar.component', './employee-list.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './employee-form.component', './navbar.compone
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, employee_form_component_1, navbar_component_1, employee_list_component_1, router_1;
+    var core_1, employee_form_component_1, navbar_component_1, employee_list_component_1;
     var AppComponent;
     return {
         setters:[
@@ -25,34 +25,18 @@ System.register(['angular2/core', './employee-form.component', './navbar.compone
             },
             function (employee_list_component_1_1) {
                 employee_list_component_1 = employee_list_component_1_1;
-            },
-            function (router_1_1) {
-                router_1 = router_1_1;
             }],
         execute: function() {
+            // import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
             AppComponent = (function () {
                 function AppComponent() {
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "<edge-nav>\n               </edge-nav>\n               <a [routerLink]=\"['EmployeeList']\" class=\"glyphicon glyphicon-list\n\">List </a>\n               <a [routerLink]=\"['EmployeeForm']\" class=\"glyphicon glyphicon-plus\n\">Form</a>\n               <router-outlet></router-outlet>\n              ",
-                        directives: [employee_form_component_1.EmployeeFormComponent, navbar_component_1.NavBarComponent, employee_list_component_1.EmployeeListComponent, router_1.ROUTER_DIRECTIVES],
-                        providers: [router_1.ROUTER_PROVIDERS]
-                    }),
-                    router_1.RouteConfig([
-                        {
-                            path: '/list',
-                            name: 'EmployeeList',
-                            component: employee_list_component_1.EmployeeListComponent
-                        },
-                        {
-                            path: '/home',
-                            name: 'EmployeeForm',
-                            component: employee_form_component_1.EmployeeFormComponent,
-                            useAsDefault: true
-                        }
-                    ]), 
+                        template: "<edge-nav>\n               </edge-nav>\n               <edge-form>\n               </edge-form>\n               <employee-list></employee-list>\n              ",
+                        directives: [employee_form_component_1.EmployeeFormComponent, navbar_component_1.NavBarComponent, employee_list_component_1.EmployeeListComponent]
+                    }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
