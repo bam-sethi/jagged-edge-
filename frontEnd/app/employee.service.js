@@ -34,11 +34,11 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                         .map(function (res) { return res.json(); })
                         .catch(this.handleError);
                 };
-                // addEmployee (employee): Observable<Employee> {
-                //   let body = JSON.stringify({employee});
+                // addEmployee () {
+                //   let body = JSON.stringify(employee);
                 //   let headers = new Headers('Content-Type', 'application/json');
-                //   let options = new RequestOptions({Headers : headers});
-                //   return this.http.post('/new',  body, options)
+                //   // let options = new RequestOptions({Headers : headers});
+                //   return this.http.post('/new',  employee, {Headers: headers})
                 //                   .map(res => res)
                 //                   .do(res => console.log(res))
                 //                   .catch(this.handleError());

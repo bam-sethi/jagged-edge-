@@ -16,13 +16,13 @@ export class EmployeeService {
                     .catch(this.handleError);
   }
 
-  // addEmployee (employee): Observable<Employee> {
+  // addEmployee () {
 
-  //   let body = JSON.stringify({employee});
+  //   let body = JSON.stringify(employee);
   //   let headers = new Headers('Content-Type', 'application/json');
-  //   let options = new RequestOptions({Headers : headers});
+  //   // let options = new RequestOptions({Headers : headers});
 
-  //   return this.http.post('/new',  body, options)
+  //   return this.http.post('/new',  employee, {Headers: headers})
   //                   .map(res => res)
   //                   .do(res => console.log(res))
   //                   .catch(this.handleError());

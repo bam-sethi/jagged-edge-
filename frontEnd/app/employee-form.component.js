@@ -1,66 +1,45 @@
-System.register(['angular2/core', './employee.service', 'angular2/http'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
-    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-        return c > 3 && r && Object.defineProperty(target, key, r), r;
-    };
-    var __metadata = (this && this.__metadata) || function (k, v) {
-        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-    };
-    var core_1, employee_service_1, http_1;
-    var EmployeeFormComponent;
-    return {
-        setters:[
-            function (core_1_1) {
-                core_1 = core_1_1;
-            },
-            function (employee_service_1_1) {
-                employee_service_1 = employee_service_1_1;
-            },
-            function (http_1_1) {
-                http_1 = http_1_1;
-            }],
-        execute: function() {
-            EmployeeFormComponent = (function () {
-                function EmployeeFormComponent(http, _employeeService) {
-                    this.http = http;
-                    this._employeeService = _employeeService;
-                    this.statuses = ['Employed', 'Unemployed', 'Unknown', 'Retired'];
-                    // model = new Employee(0, '', '', '');
-                    this.model = { firstName: '', lastName: '', statuses: '' };
-                    this.submitted = false;
-                    this.active = true;
-                }
-                EmployeeFormComponent.prototype.onSubmit = function () {
-                    this.submitted = true;
-                };
-                EmployeeFormComponent.prototype.submission = function (event) {
-                    var _this = this;
-                    var headers = new http_1.Headers();
-                    headers.append('Content-Type', 'application/json');
-                    this.http.post('/new', JSON.stringify(this.model), { headers: headers })
-                        .map(function (res) { return res; })
-                        .subscribe(function (employees) {
-                        _this.employee = employees;
-                    });
-                    this.active = false;
-                    setTimeout(function () { return _this.active = true; }, 0);
-                };
-                EmployeeFormComponent = __decorate([
-                    core_1.Component({
-                        selector: 'edge-form',
-                        templateUrl: 'app/employee-form.component.html',
-                        providers: [employee_service_1.EmployeeService]
-                    }), 
-                    __metadata('design:paramtypes', [http_1.Http, employee_service_1.EmployeeService])
-                ], EmployeeFormComponent);
-                return EmployeeFormComponent;
-            }());
-            exports_1("EmployeeFormComponent", EmployeeFormComponent);
-        }
-    }
-});
+// import {Component} from 'angular2/core';
+// import {NgForm} from 'angular2/common';
+// import {EmployeeService} from './employee.service';
+// import {Employee} from './employee';
+// import {Http, Response, Headers} from 'angular2/http';
+// import {Observable}     from 'rxjs/Observable';
+// @Component({
+//   selector: 'edge-form',
+//   templateUrl: 'app/employee-form.component.html',
+//   providers: [EmployeeService]
+// })
+// export class EmployeeFormComponent{  
+//   constructor(private http: Http, private _employeeService: EmployeeService) {
+//   }
+//   // statuses = ['Employed', 'Unemployed', 'Unknown', 'Retired'];
+//   // // model = new Employee(0, '', '', '');
+//   // model = {firstName: '', lastName: '', statuses: ''}
+//   // submitted = false;
+//   // active = true;
+//   // errorMessage: string;
+//   // employees: Employee[];
+//   // onSubmit() { 
+//   //   this.submitted = true; 
+//   // }
+//   // submission(event): Observable<Employee>{
+//   //   var headers = new Headers();
+//   //   headers.append('Content-Type', 'application/json');
+//   //   this.http.post('/new', JSON.stringify(this.model), { headers: headers })
+//   //     .map(res => res)
+//   //     .subscribe((employees) => {
+//   //     this.employee = employees;);
+//   //     this.active = false;
+//   //     setTimeout(()=> this.active = true, 0);
+//   //   }
+//   // submission(event){
+//   //   console.log(this._employeeService);
+//   //   this._employeeService.addEmployee ()
+//   //     .subscribe(
+//   //      employee  => this.employees.push(employee),
+//   //      error =>  this.errorMessage = <any>error);
+//   //     this.active = false;
+//   //     setTimeout(()=> this.active = true, 0);
+//   // }
+// }
 //# sourceMappingURL=employee-form.component.js.map
