@@ -7,13 +7,21 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Employees = require('./models/employees.js');
 
+
+var uristring =
+    process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://localhost/jagged-edge';
+
+var port = process.env.PORT || 3000;
+
+
 // var bigDataArray = [];
 var dataSet = {};
 // var data = {};
 var status = ['Employed', 'Unemployed', 'Unknown', 'Retired'];
 
-
-mongoose.connect('mongodb://localhost:27017/jagged-edge');
+// mongoose.connect('mongodb://localhost:27017/jagged-edge');
 
 app.use(express.static(__dirname + '/frontEnd'))
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -79,6 +87,15 @@ app.post('/new', function (req, res) {
   });
 })
 
-app.listen(3000, function () {
-  console.log('Listening on port 3000');
+
+app.listen(port, function () {
+  console.log('Listening on port', port);
+});
+
+mongoose.connect(uristring, function (err, res) {
+  if (err) {
+  console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+  } else {
+  console.log ('Succeeded connected to: ' + uristring);
+  }
 });
