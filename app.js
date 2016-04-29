@@ -23,7 +23,7 @@ var status = ['Employed', 'Unemployed', 'Unknown', 'Retired'];
 
 // mongoose.connect('mongodb://localhost:27017/jagged-edge');
 
-app.use(express.static(__dirname + '/frontEnd'))
+app.use(express.static(__dirname + '/public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 
