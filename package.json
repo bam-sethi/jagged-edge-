@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    // "install": "concurrently \"npm run tsc:w\" \"npm run lite\"",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "lite": "lite-server",
