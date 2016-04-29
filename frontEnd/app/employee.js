@@ -6,11 +6,12 @@ System.register([], function(exports_1, context_1) {
         setters:[],
         execute: function() {
             Employee = (function () {
-                function Employee(id, firstName, lastName, statuses) {
+                function Employee(id, firstName, lastName, statuses, image) {
                     this.id = id;
                     this.firstName = firstName;
                     this.lastName = lastName;
                     this.statuses = statuses;
+                    this.image = image;
                 }
                 return Employee;
             }());

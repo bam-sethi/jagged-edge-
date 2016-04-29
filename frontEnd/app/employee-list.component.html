@@ -3,7 +3,7 @@
     <h1>Employee Status</h1>
     <form *ngIf="active" (ngSubmit)="onSubmit()" #employeeForm="ngForm">
       <!-- {{diagnostic}} -->
-      <div class="form-group">
+      <div class="form-group first">
         <label for="firstName">First Name</label>
         <input type="text" class="form-control" required
         [(ngModel)]="model.firstName"
@@ -15,7 +15,7 @@
         </div>
       </div>
       
-      <div class="form-group">
+      <div class="form-group last">
         <label for="lastName">Surname</label>
         <input type="text" class="form-control" required 
         [(ngModel)]="model.lastName" 
@@ -27,7 +27,7 @@
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group select">
         <select class="form-control" required
         [(ngModel)]="model.statuses"
         ngControl="statuses"         
@@ -54,7 +54,7 @@
   <li class="employee-list" *ngFor="#employee of employees">
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <img class="avatar" style="width: 50px;" src="{{employee.image}}" alt="">
+        <img class="avatar" style="width: 50px;" src="{{employee.image || model.image}}" alt="">
         {{employee.firstName}} <span>{{employee.lastName}}</span>
       </div>
       <div class="panel-body">

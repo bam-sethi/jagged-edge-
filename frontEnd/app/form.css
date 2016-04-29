@@ -9,12 +9,12 @@
 .container{
   padding: 20px;
   width: 100% !important;
-  height: 100vh !important;
-  background-color: slategrey;
+  height: 100% !important;
 }
 
 .form-container {
-  max-width: 60%;
+  max-width: 70%;
+  height: 100px;
   margin: auto;
   vertical-align: middle;
   padding-top: 50px;
@@ -31,3 +31,31 @@
   max-width: 60% !important;
   margin: auto;
 }
+
+/*.select{
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+
+.first{
+  display: inline-block;
+  float: left;
+  width:200px;
+}
+
+.last{
+  display: inline-block;
+  float: left;
+  width: 200px;
+}
+
+
+
+*/
+
+
+
+
+
+

@@ -33,14 +33,16 @@ System.register(['angular2/core', './employee.service', './pipeTransform', 'angu
                     this._employeeService = _employeeService;
                     this.statuses = ['Employed', 'Unemployed', 'Unknown', 'Retired'];
                     // model = new Employee(0, '', '', '');
-                    this.model = { firstName: '', lastName: '', statuses: '' };
+                    this.model = { firstName: '', lastName: '', statuses: '', image: '../images/corp.jpg' };
                     this.submitted = false;
                     this.active = true;
                 }
                 EmployeeListComponent.prototype.onSubmit = function () {
                     this.submitted = true;
                 };
-                EmployeeListComponent.prototype.ngOnInit = function () { this.getEmployees(); };
+                EmployeeListComponent.prototype.ngOnInit = function () {
+                    this.getEmployees();
+                };
                 EmployeeListComponent.prototype.getEmployees = function () {
                     var _this = this;
                     this._employeeService.getEmployees()
@@ -59,9 +61,8 @@ System.register(['angular2/core', './employee.service', './pipeTransform', 'angu
                     });
                     this.active = false;
                     setTimeout(function () { return _this.active = true; }, 0);
-                    // ApplicationRef.tick()
-                    // this.cdr.detectChanges();
                     this.getEmployees();
+                    this.model = { firstName: '', lastName: '', statuses: '' };
                 };
                 EmployeeListComponent = __decorate([
                     core_1.Component({

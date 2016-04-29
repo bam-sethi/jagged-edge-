@@ -3,6 +3,7 @@ export class Employee{
     public id : number,
     public firstName : string,
     public lastName : string,
-    public statuses : string
+    public statuses : string,
+    public image : string
   ) { }
 }

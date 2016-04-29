@@ -23,16 +23,18 @@ export class EmployeeListComponent implements OnInit {
   employees: Employee[];
   statuses = ['Employed', 'Unemployed', 'Unknown', 'Retired'];
   // model = new Employee(0, '', '', '');
-  model = {firstName: '', lastName: '', statuses: ''}
+  model = {firstName: '', lastName: '', statuses: '', image:'../images/corp.jpg'}
   submitted = false;
   active = true;
   errorMessage: string;
-  
-  onSubmit() { 
+
+  onSubmit() {
     this.submitted = true; 
   }
 
-  ngOnInit() { this.getEmployees(); }
+  ngOnInit() { 
+    this.getEmployees(); 
+  }
 
   getEmployees() {
     this._employeeService.getEmployees()
@@ -52,11 +54,10 @@ export class EmployeeListComponent implements OnInit {
       this.employee = employees;);
       this.active = false;
       setTimeout(()=> this.active = true, 0);
-      // ApplicationRef.tick()
-      // this.cdr.detectChanges();
       this.getEmployees();
-
+      this.model = {firstName: '', lastName: '', statuses: ''}
     }
+
 
 }
 
