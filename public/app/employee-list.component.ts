@@ -4,7 +4,7 @@ import {EmployeeService} from './employee.service';
 import {Employee} from './employee';
 import {ConvertPipe} from './pipeTransform';
 import {Http, HTTP_PROVIDERS, Response, Headers} from 'angular2/http';
-
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'employee-list',
@@ -23,7 +23,7 @@ export class EmployeeListComponent implements OnInit {
   employees: Employee[];
   statuses = ['Employed', 'Unemployed', 'Unknown', 'Retired'];
   // model = new Employee(0, '', '', '');
-  model = {firstName: '', lastName: '', statuses: '', image:'../images/corp.jpg'}
+  public model = {firstName: '', lastName: '', statuses: '', image:'../images/corp.jpg'}
   submitted = false;
   active = true;
   errorMessage: string;
@@ -45,7 +45,7 @@ export class EmployeeListComponent implements OnInit {
         error =>  this.errorMessage = <any>error);
   }
 
-  submission(event): Observable<Employee>{
+  submission(event){
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
     this.http.post('/new', JSON.stringify(this.model), { headers: headers })
