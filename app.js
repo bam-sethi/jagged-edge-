@@ -10,7 +10,8 @@ var Employees = require('./models/employees.js');
 
 var uristring =
     process.env.MONGOLAB_URI ||
-    process.env.MONGOHQ_URL ||process.env.MONGODB_URI || process.env.MONGOLAB_BLUE_URI ||
+    process.env.MONGOHQ_URL || 
+    process.env.MONGODB_URI ||
     'mongodb://localhost/jagged-edge';
 
 var port = process.env.PORT || 3000;
