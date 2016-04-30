@@ -7,6 +7,11 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Employees = require('./models/employees.js');
 
+var WORKERS = process.env.WEB_CONCURRENCY || 1;
+
+function start() {
+  createRandomUserData()
+}
 
 var uristring =
     process.env.MONGOLAB_URI ||
@@ -47,17 +52,11 @@ function generateData(){
   });
 };
 
-for(var i = 0; i < 1; i++){
-  generateData()
-  // bigDataArray.push(data)
-  // console.log(bigDataArray);
+function createRandomUserData(){
+  for(var i = 0; i < 1; i++){
+    generateData();
+  };
 };
-
-
-
-// fs.writeFile('dataSet.json', JSON.stringify(bigDataArray), function(){
-//   console.log('data set produced');
-// })
 
 // root path
 app.get("/", function (req, res) {
