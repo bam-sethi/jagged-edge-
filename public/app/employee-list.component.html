@@ -1,4 +1,4 @@
-<div class="container">
+<div class="post-container">
   <div class="form-container" [hidden]="submitted">
     <h1>Employee Status</h1>
     <form *ngIf="active" (ngSubmit)="onSubmit()" #employeeForm="ngForm">
@@ -49,22 +49,25 @@
 
 </div>
 
-
-<ul>
-  <li class="employee-list" *ngFor="#employee of employees">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <img class="avatar" style="width: 50px;" src="{{employee.image || model.image}}" alt="">
-        {{employee.firstName}} <span>{{employee.lastName}}</span>
+<div class="list-container">
+  <ul>
+    <li class="employee-list" *ngFor="#employee of employees">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <img class="avatar" style="width: 50px;" src="{{employee.image}}" alt="">
+          {{employee.firstName}} <span>{{employee.lastName}}</span>
+        </div>
+        <div class="panel-body">
+          <span>STATUS IS NOW: {{employee.status}}</span>
+          <br> 
+          {{employee.location}}
+          <span>{{employee.company}}</span>
+        </div>
       </div>
-      <div class="panel-body">
-        <span>STATUS IS NOW: {{employee.status}}</span>
-        <br> 
-        {{employee.location}}
-        <span>{{employee.company}}</span>
-      </div>
-    </div>
-  </li>
-</ul>
+    </li>
+  </ul>
 
-<div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+  <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+</div>
+
+

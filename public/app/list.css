@@ -4,6 +4,7 @@
 
 .avatar{
   border-radius: 50%;
+  background: url(../images/corp.jpg);
 }
 
 .title{

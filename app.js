@@ -48,7 +48,7 @@ if(cluster.isMaster){
   });
 
   app.get('/list', function (req, res) {
-    Employees.find({}).sort({date:1}).exec(function(err, data){
+    Employees.find({}).sort({date:-1}).exec(function(err, data){
       if(err){
         res.send("Error", err)
       } else {
@@ -57,13 +57,17 @@ if(cluster.isMaster){
     });
   })
 
+  console.log(new Date())
+
   app.post('/new', function (req, res) {
     var body = req.body;
     console.log(body)
     var employee = new Employees ({
       firstName : body.firstName,
       lastName : body.lastName,
-      status : body.statuses
+      status : body.statuses,
+      date: new Date(),
+      image: body.image
     });
     employee.save(function(err, employee) {
       if (err) console.log(err);
